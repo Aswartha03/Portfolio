@@ -42,7 +42,7 @@ const Contact = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:3000/contact/add",
+        "https://portfolio-oqh7.onrender.com/contact/add",
         formData
       );
       // console.log(res);
