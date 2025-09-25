@@ -61,7 +61,7 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Mobile/Tablet Menu Toggle */}
+          {/* Mobile/Tablet Icons */}
           <div className="md:hidden flex items-center space-x-4 z-50">
             {/* Theme Toggle */}
             <button
@@ -71,7 +71,7 @@ const Navigation = () => {
               🌙
             </button>
 
-            {/* Hamburger/X */}
+            {/* Hamburger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
@@ -83,13 +83,13 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile/Tablet Menu Dropdown */}
+      {/* Mobile/Tablet Dropdown */}
       <div
-        className={`md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transition-all duration-300 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden fixed top-16 left-0 w-full bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden transition-all duration-300 ease-in-out z-40 ${
+          isOpen ? "max-h-screen opacity-100 py-4" : "max-h-0 opacity-0 py-0"
         }`}
       >
-        <div className="px-4 py-3 space-y-2 flex flex-col">
+        <div className="flex flex-col px-4 space-y-2">
           {navItems.map((item) => (
             <button
               key={item.label}
