@@ -1,4 +1,3 @@
-// Navigation.jsx
 import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
@@ -36,13 +35,13 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 relative">
           {/* Logo */}
           <div className="font-bold text-lg sm:text-xl text-gray-900 dark:text-white">
             Badigi Aswartha Reddy
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
@@ -53,37 +52,31 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            {/* Desktop Theme Toggle */}
+            <button className="ml-4 text-gray-700 dark:text-gray-300">
+              🌙
+            </button>
           </div>
 
-          {/* Right side: Theme toggle (desktop) + Hamburger (mobile) */}
-          <div className="flex items-center space-x-4">
-            {/* Theme toggle button - desktop only */}
-            <div className="hidden md:block">
-              <button className="text-gray-700 dark:text-gray-300">
-                🌙 {/* Replace with your theme toggle */}
-              </button>
-            </div>
-
-            {/* Hamburger - mobile only */}
-            <div className="md:hidden z-50">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
-              >
-                {isOpen ? <HiX className="w-7 h-7" /> : <HiMenu className="w-7 h-7" />}
-              </button>
-            </div>
+          {/* Mobile Hamburger */}
+          <div className="md:hidden z-50">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
+            >
+              {isOpen ? <HiX className="w-7 h-7" /> : <HiMenu className="w-7 h-7" />}
+            </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        className={`md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 px-4 py-3 space-y-2">
+        <div className="px-4 py-3 space-y-2">
           {navItems.map((item) => (
             <button
               key={item.label}
@@ -93,6 +86,10 @@ const Navigation = () => {
               {item.label}
             </button>
           ))}
+          {/* Optional Mobile Theme Toggle */}
+          <button className="w-full text-left px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition duration-300 font-medium">
+            🌙 Toggle Theme
+          </button>
         </div>
       </div>
     </nav>
