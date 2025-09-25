@@ -1,3 +1,4 @@
+// Navigation.jsx
 import { useState, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 
@@ -54,17 +55,17 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Right Side Controls (Desktop: Theme toggle, Mobile: Hamburger) */}
+          {/* Right side: Theme toggle (desktop) + Hamburger (mobile) */}
           <div className="flex items-center space-x-4">
-            {/* Theme toggle - only on desktop */}
+            {/* Theme toggle button - desktop only */}
             <div className="hidden md:block">
               <button className="text-gray-700 dark:text-gray-300">
-                🌙 {/* Replace with actual theme toggle */}
+                🌙 {/* Replace with your theme toggle */}
               </button>
             </div>
 
-            {/* Hamburger menu - only on mobile */}
-            <div className="md:hidden">
+            {/* Hamburger - mobile only */}
+            <div className="md:hidden z-50">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
