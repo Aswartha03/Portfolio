@@ -41,7 +41,7 @@ const Navigation = () => {
             Badigi Aswartha Reddy
           </div>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu with Theme Toggle */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
@@ -52,17 +52,32 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            {/* Desktop Theme Toggle */}
-            <button className="ml-4 text-gray-700 dark:text-gray-300">
+            {/* Desktop Theme Toggle (Moved inside flex container) */}
+            <button 
+              className="ml-4 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
+              aria-label="Toggle Theme" // Added for accessibility
+            >
               🌙
             </button>
           </div>
 
-          {/* Mobile Hamburger */}
-          <div className="md:hidden z-50">
+          {/* Mobile Hamburger & Theme Toggle Container */}
+          {/* We now put the Theme Toggle next to the Hamburger */}
+          <div className="md:hidden flex items-center space-x-4 z-50"> 
+            
+            {/* Mobile-sized Theme Toggle (optional: keep or move to mobile menu) */}
+             <button 
+              className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
+              aria-label="Toggle Theme"
+            >
+               🌙
+            </button> 
+
+            {/* Mobile Hamburger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
+              aria-label={isOpen ? "Close menu" : "Open menu"} // Added for accessibility
             >
               {isOpen ? <HiX className="w-7 h-7" /> : <HiMenu className="w-7 h-7" />}
             </button>
@@ -86,10 +101,10 @@ const Navigation = () => {
               {item.label}
             </button>
           ))}
-          {/* Optional Mobile Theme Toggle */}
-          <button className="w-full text-left px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition duration-300 font-medium">
+          {/* Optional Mobile Theme Toggle: REMOVED from the main header and placed here for a clean vertical list */}
+          {/* <button className="w-full text-left px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition duration-300 font-medium">
             🌙 Toggle Theme
-          </button>
+          </button> */}
         </div>
       </div>
     </nav>
