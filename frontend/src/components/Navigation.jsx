@@ -54,14 +54,26 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
-            >
-              {isOpen ? <HiX className="w-7 h-7" /> : <HiMenu className="w-7 h-7" />}
+          {/* Right Side Controls: Theme Toggle + Mobile Menu */}
+          <div className="flex items-center space-x-4">
+            {/* Theme Toggle Button */}
+            <button className="text-gray-700 dark:text-gray-300">
+              🌙 {/* Replace this with your actual theme toggle icon */}
             </button>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
+              >
+                {isOpen ? (
+                  <HiX className="w-7 h-7" />
+                ) : (
+                  <HiMenu className="w-7 h-7" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
