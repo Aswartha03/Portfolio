@@ -36,7 +36,7 @@ const Navigation = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Brand / Logo */}
+          {/* Logo */}
           <div className="font-bold text-lg sm:text-xl text-gray-900 dark:text-white">
             Badigi Aswartha Reddy
           </div>
@@ -54,31 +54,29 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Right Side Controls: Theme Toggle + Mobile Menu */}
+          {/* Right Side Controls (Desktop: Theme toggle, Mobile: Hamburger) */}
           <div className="flex items-center space-x-4">
-            {/* Theme Toggle Button */}
-            <button className="text-gray-700 dark:text-gray-300">
-              🌙 {/* Replace this with your actual theme toggle icon */}
-            </button>
+            {/* Theme toggle - only on desktop */}
+            <div className="hidden md:block">
+              <button className="text-gray-700 dark:text-gray-300">
+                🌙 {/* Replace with actual theme toggle */}
+              </button>
+            </div>
 
-            {/* Mobile Menu Button */}
+            {/* Hamburger menu - only on mobile */}
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
               >
-                {isOpen ? (
-                  <HiX className="w-7 h-7" />
-                ) : (
-                  <HiMenu className="w-7 h-7" />
-                )}
+                {isOpen ? <HiX className="w-7 h-7" /> : <HiMenu className="w-7 h-7" />}
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Mobile & Tab Navigation */}
+      {/* Mobile menu */}
       <div
         className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
