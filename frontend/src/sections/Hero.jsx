@@ -5,7 +5,7 @@ import aswarthImage from "../assets/aswarth.jpg";
 
 const Hero = () => {
   const { personal } = portfolioData;
-  const resumeUrl = "/AswarthaReddy_Resume.pdf";
+  const resumeUrl = "/Aswartha_Reddy_Resume.pdf";
 
   const handleResumeClick = (e) => {
     e.preventDefault();

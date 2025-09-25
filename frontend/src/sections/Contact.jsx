@@ -18,7 +18,7 @@ const Contact = () => {
     message: "",
   });
 
-  const resumeUrl = "/AswarthaReddy_Resume.pdf";
+  const resumeUrl = "/Aswartha_Reddy_Resume.pdf";
 
   const handleResumeClick = (e) => {
     e.preventDefault();
