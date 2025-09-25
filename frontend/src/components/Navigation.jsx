@@ -52,7 +52,6 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-
             {/* Desktop Theme Toggle */}
             <button
               className="ml-4 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
@@ -63,7 +62,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile/Tablet Menu Toggle */}
-          <div className="md:hidden flex items-center justify-end space-x-4 w-full z-50">
+          <div className="md:hidden flex items-center space-x-4 z-50">
             {/* Theme Toggle */}
             <button
               className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 focus:outline-none"
@@ -100,10 +99,6 @@ const Navigation = () => {
               {item.label}
             </button>
           ))}
-          {/* Optional: Mobile Theme Toggle inside menu */}
-          {/* <button className="w-full text-left px-3 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400 transition duration-300 font-medium">
-            🌙 Toggle Theme
-          </button> */}
         </div>
       </div>
     </nav>
